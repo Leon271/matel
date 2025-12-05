@@ -1,3 +1,4 @@
+<!--
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -9,5 +10,51 @@
     <h1>ここは2ページ目です</h1>
     <p>無事に移動できました！</p>
     <button onclick="location.href='index.html'">トップに戻る</button>
+</body>
+</html>
+-->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matel</title>
+</head>
+<body>
+    <button id="GestInBtn" onclick="sendData()">ゲストログイン2</button>
+    <p id="status"></p>
+
+    <script>
+        function sendData() {
+            // ★ここに先ほどのGASのウェブアプリURLを貼り付けてください
+            const gasUrl = "https://script.google.com/macros/s/AKfycbw1YkiTDzwzO95yFZx7atdjB7G7wgskRdTASHh86TTPPfnrZnSKQt7DTBNPQRDfwNBdXA/exec";
+
+            const btn = document.getElementById("GestInBtn");
+            const status = document.getElementById("status");
+
+            // 連打防止のためボタンを一時的に無効化
+            btn.disabled = true;
+            status.textContent = "ゲストログイン中...";
+
+            // GASにデータを送る設定
+            // mode: 'no-cors' が重要です。これがないとエラーになります。
+            fetch(gasUrl, {
+                method: "POST",
+                mode: "no-cors", 
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            })
+            .then(() => {
+                location.href = 'index.html';
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                status.textContent = "エラーが発生しました";
+                status.style.color = "red";
+                btn.disabled = false;
+            });
+        }
+    </script>
 </body>
 </html>
