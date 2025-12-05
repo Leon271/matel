@@ -1,60 +1,12 @@
-<!--
-<!DOCTYPE html>
+ï»¿<!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ƒTƒuƒy[ƒW</title>
+    <title>ã‚µãƒ–ãƒšãƒ¼ã‚¸</title>
 </head>
 <body>
-    <h1>‚±‚±‚Í2ƒy[ƒW–Ú‚Å‚·</h1>
-    <p>–³–‚ÉˆÚ“®‚Å‚«‚Ü‚µ‚½I</p>
-    <button onclick="location.href='index.html'">ƒgƒbƒv‚É–ß‚é</button>
-</body>
-</html>
--->
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matel</title>
-</head>
-<body>
-    <button id="GestInBtn" onclick="sendData()">ƒQƒXƒgƒƒOƒCƒ“2</button>
-    <p id="status"></p>
-
-    <script>
-        function sendData() {
-            // š‚±‚±‚Éæ‚Ù‚Ç‚ÌGAS‚ÌƒEƒFƒuƒAƒvƒŠURL‚ğ“\‚è•t‚¯‚Ä‚­‚¾‚³‚¢
-            const gasUrl = "https://script.google.com/macros/s/AKfycbw1YkiTDzwzO95yFZx7atdjB7G7wgskRdTASHh86TTPPfnrZnSKQt7DTBNPQRDfwNBdXA/exec";
-
-            const btn = document.getElementById("GestInBtn");
-            const status = document.getElementById("status");
-
-            // ˜A‘Å–h~‚Ì‚½‚ßƒ{ƒ^ƒ“‚ğˆê“I‚É–³Œø‰»
-            btn.disabled = true;
-            status.textContent = "ƒQƒXƒgƒƒOƒCƒ“’†...";
-
-            // GAS‚Éƒf[ƒ^‚ğ‘—‚éİ’è
-            // mode: 'no-cors' ‚ªd—v‚Å‚·B‚±‚ê‚ª‚È‚¢‚ÆƒGƒ‰[‚É‚È‚è‚Ü‚·B
-            fetch(gasUrl, {
-                method: "POST",
-                mode: "no-cors", 
-                headers: {
-                    "Content-Type": "application/json"
-                }
-            })
-            .then(() => {
-                location.href = 'index.html';
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                status.textContent = "ƒGƒ‰[‚ª”­¶‚µ‚Ü‚µ‚½";
-                status.style.color = "red";
-                btn.disabled = false;
-            });
-        }
-    </script>
+    <h1>ã“ã“ã¯2ãƒšãƒ¼ã‚¸ç›®ã§ã™</h1>
+    <p>ç„¡äº‹ã«ç§»å‹•ã§ãã¾ã—ãŸï¼</p>
+    <button onclick="location.href='index.html'">ãƒˆãƒƒãƒ—ã«æˆ»ã‚‹</button>
 </body>
 </html>
